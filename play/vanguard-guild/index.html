@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <title>Guild Vanguard</title>
+  <meta name="description" content="Lead your heroes, build your guild, and survive the darkness in Guild Vanguard.">
+
+  <link rel="shortcut icon" href="TemplateData/favicon.ico">
+  <link rel="stylesheet" href="TemplateData/guild-vanguard.css">
+</head>
+
+<body>
+  <div class="page-noise" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#home" aria-label="Guild Vanguard home">
+      <span class="brand-rune">GV</span>
+      <span class="brand-name">Guild Vanguard</span>
+    </a>
+
+    <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Toggle navigation</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a href="#home" class="is-active">Home</a>
+      <a href="#gameplay">Gameplay</a>
+      <a href="#heroes">Heroes</a>
+      <a href="#features">Features</a>
+      <a href="#media">Media</a>
+      <a href="#news">News</a>
+    </nav>
+
+    <a class="button button--small button--primary header-cta" href="#play">Play build</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-background" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+
+      <img class="hero-character hero-character--cedric" src="TemplateData/images/cedric.png" alt="Cedric raising his sword">
+      <img class="hero-character hero-character--velthera" src="TemplateData/images/velthera.png" alt="Velthera casting void magic">
+
+      <div class="hero-content">
+        <span class="eyebrow">Team manager auto-battler</span>
+        <h1>Guild <span>Vanguard</span></h1>
+        <p>
+          Recruit extraordinary heroes, command multiple expeditions,
+          and guide your guild through a world consumed by darkness.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button--primary" href="#play">Play WebGL build</a>
+          <a class="button button--ghost" href="#gameplay">Discover the game</a>
+        </div>
+      </div>
+
+      <div class="feature-strip" aria-label="Core game features">
+        <article>
+          <span class="feature-icon">♜</span>
+          <div><strong>Manage expeditions</strong><small>Lead multiple parties into the unknown.</small></div>
+        </article>
+        <article>
+          <span class="feature-icon">♟</span>
+          <div><strong>Build your team</strong><small>Recruit heroes and shape your roster.</small></div>
+        </article>
+        <article>
+          <span class="feature-icon">⚔</span>
+          <div><strong>Automatic combat</strong><small>Watch tactical battles unfold.</small></div>
+        </article>
+        <article>
+          <span class="feature-icon">✦</span>
+          <div><strong>Race and conquer</strong><small>Complete dangerous regions first.</small></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section gameplay-intro" id="gameplay">
+      <div class="section-heading">
+        <span class="eyebrow">Command from the guild hall</span>
+        <h2>A living battlefield, not a waiting game</h2>
+        <p>
+          Assemble your party, prepare their abilities, and watch every decision
+          play out in fast, readable auto-battles.
+        </p>
+      </div>
+
+      <div class="gameplay-preview-card">
+        <img src="TemplateData/images/gameplay.jpg" alt="Guild Vanguard battle against a group of spider monsters">
+        <div class="preview-overlay">
+          <span>Actual in-game battle</span>
+          <a href="#play">Launch the playable build ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section heroes-section" id="heroes">
+      <div class="section-heading section-heading--center">
+        <span class="eyebrow">Meet the vanguard</span>
+        <h2>Heroes forged for different roles</h2>
+      </div>
+
+      <div class="carousel-shell">
+        <button id="heroes-previous" class="carousel-button" type="button" aria-label="Previous hero">←</button>
+        <div id="hero-carousel" class="hero-carousel" aria-label="Guild Vanguard heroes"></div>
+        <button id="heroes-next" class="carousel-button" type="button" aria-label="Next hero">→</button>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="section-heading">
+        <span class="eyebrow">Build the guild your way</span>
+        <h2>Every expedition strengthens the whole roster</h2>
+      </div>
+
+      <div class="feature-grid">
+        <article><span>01</span><h3>Recruit</h3><p>Build a roster of heroes with distinct roles, abilities, and progression paths.</p></article>
+        <article><span>02</span><h3>Deploy</h3><p>Create specialized parties and send them into increasingly dangerous regions.</p></article>
+        <article><span>03</span><h3>Adapt</h3><p>Respond to enemy compositions and refine your teams between expeditions.</p></article>
+        <article><span>04</span><h3>Conquer</h3><p>Defeat monsters, bosses, and the growing influence of the void.</p></article>
+      </div>
+    </section>
+
+    <section class="play-section" id="play">
+      <div class="play-heading">
+        <div>
+          <span class="eyebrow">Playable WebGL build</span>
+          <h2>Enter the expedition</h2>
+        </div>
+
+        <div class="build-status"><span class="status-dot"></span> Web build ready</div>
+      </div>
+
+      <div class="game-frame">
+        <div class="frame-top">
+          <div>
+            <span class="frame-kicker">Guild Vanguard</span>
+            <strong>Live prototype</strong>
+          </div>
+
+          <button id="header-fullscreen-button" class="button button--ghost button--small" type="button">
+            Fullscreen
+          </button>
+        </div>
+
+        <div id="unity-container" class="unity-desktop">
+          <canvas id="unity-canvas" width="960" height="600" tabindex="-1" aria-label="Guild Vanguard game"></canvas>
+
+          <div id="unity-loading-bar">
+            <div class="loading-card">
+              <div class="loading-emblem">GV</div>
+              <div class="loading-copy">
+                <strong>Preparing the expedition</strong>
+                <span id="loading-text">Loading game data...</span>
+              </div>
+              <div id="unity-progress-bar-empty"><div id="unity-progress-bar-full"></div></div>
+              <span id="loading-percent">0%</span>
+            </div>
+          </div>
+
+          <div id="unity-warning"></div>
+        </div>
+
+        <div class="frame-bottom">
+          <div class="control-hint"><span class="key">F</span><span>Fullscreen</span></div>
+          <div class="frame-buttons">
+            <button id="reload-button" class="icon-button" type="button" title="Reload game">↻</button>
+            <button id="unity-fullscreen-button" class="button button--primary" type="button">Enter fullscreen</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section media-section" id="media">
+      <div class="section-heading section-heading--center">
+        <span class="eyebrow">From the front lines</span>
+        <h2>Media</h2>
+      </div>
+      <div id="media-gallery" class="media-gallery" aria-label="Guild Vanguard screenshots"></div>
+    </section>
+
+    <section class="section news-section" id="news">
+      <div class="news-card">
+        <div>
+          <span class="eyebrow">Development dispatch</span>
+          <h2>The guild is still growing</h2>
+          <p>Follow future builds, new heroes, regions, and combat improvements as the prototype develops.</p>
+        </div>
+        <a class="button button--primary" href="#play">Play the latest build</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="media-lightbox" class="media-lightbox" hidden>
+    <button id="media-lightbox-close" class="media-lightbox__close" type="button" aria-label="Close screenshot">×</button>
+    <button id="media-lightbox-previous" class="media-lightbox__nav media-lightbox__nav--previous" type="button" aria-label="Previous screenshot">←</button>
+
+    <div class="media-lightbox__content">
+      <img id="media-lightbox-image" src="" alt="">
+      <div class="media-lightbox__caption">
+        <div>
+          <strong id="media-lightbox-title"></strong>
+          <span id="media-lightbox-description"></span>
+        </div>
+        <span id="media-lightbox-counter" class="media-lightbox__counter"></span>
+      </div>
+    </div>
+
+    <button id="media-lightbox-next" class="media-lightbox__nav media-lightbox__nav--next" type="button" aria-label="Next screenshot">→</button>
+  </div>
+
+  <footer class="site-footer">
+    <a class="brand" href="#top"><span class="brand-rune">GV</span><span class="brand-name">Guild Vanguard</span></a>
+    <span>WebGL prototype build</span>
+  </footer>
+
+  <script src="TemplateData/guild-vanguard-content.js"></script>
+  <script>
+    const canvas = document.querySelector("#unity-canvas");
+    const unityContainer = document.querySelector("#unity-container");
+    const loadingBar = document.querySelector("#unity-loading-bar");
+    const loadingText = document.querySelector("#loading-text");
+    const loadingPercent = document.querySelector("#loading-percent");
+    const progressBar = document.querySelector("#unity-progress-bar-full");
+    const fullscreenButtons = [
+      document.querySelector("#unity-fullscreen-button"),
+      document.querySelector("#header-fullscreen-button")
+    ];
+    const reloadButton = document.querySelector("#reload-button");
+    const menuButton = document.querySelector("#menu-button");
+    const siteNav = document.querySelector("#site-nav");
+
+    let unityInstanceReference = null;
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = siteNav.classList.toggle("is-open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    document.querySelectorAll(".site-nav a").forEach(link => {
+      link.addEventListener("click", () => {
+        siteNav.classList.remove("is-open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    const observedSections = [...document.querySelectorAll("main section[id]")];
+    const navLinks = [...document.querySelectorAll(".site-nav a")];
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!visible) return;
+
+      navLinks.forEach(link => {
+        link.classList.toggle("is-active", link.getAttribute("href") === `#${visible.target.id}`);
+      });
+    }, { rootMargin: "-30% 0px -60% 0px", threshold: [0, 0.2, 0.5] });
+
+    observedSections.forEach(section => sectionObserver.observe(section));
+
+    function unityShowBanner(msg, type) {
+      const warningBanner = document.querySelector("#unity-warning");
+
+      function updateBannerVisibility() {
+        warningBanner.style.display = warningBanner.children.length ? "flex" : "none";
+      }
+
+      const message = document.createElement("div");
+      message.className = `unity-message unity-message--${type || "info"}`;
+      message.innerHTML = msg;
+      warningBanner.appendChild(message);
+
+      if (type !== "error") {
+        setTimeout(() => {
+          message.remove();
+          updateBannerVisibility();
+        }, 5000);
+      }
+
+      updateBannerVisibility();
+    }
+
+    const buildUrl = "Build";
+    const loaderUrl = buildUrl + "/Vanguard.loader.js";
+
+    const config = {
+      arguments: [],
+      dataUrl: buildUrl + "/Vanguard.data",
+      frameworkUrl: buildUrl + "/Vanguard.framework.js",
+      codeUrl: buildUrl + "/Vanguard.wasm",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "DefaultCompany",
+      productName: "GuildVanguard",
+      productVersion: "1.0",
+      showBanner: unityShowBanner
+    };
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      unityContainer.classList.remove("unity-desktop");
+      unityContainer.classList.add("unity-mobile");
+      canvas.classList.add("unity-mobile");
+      // config.devicePixelRatio = 1;
+    }
+
+    loadingBar.style.display = "grid";
+
+    const loaderScript = document.createElement("script");
+    loaderScript.src = loaderUrl;
+
+    loaderScript.onload = () => {
+      createUnityInstance(canvas, config, (progress) => {
+        const percentage = Math.round(progress * 100);
+        progressBar.style.width = `${percentage}%`;
+        loadingPercent.textContent = `${percentage}%`;
+
+        if (percentage < 30) loadingText.textContent = "Loading world data...";
+        else if (percentage < 70) loadingText.textContent = "Preparing heroes and monsters...";
+        else if (percentage < 100) loadingText.textContent = "Opening the guild hall...";
+        else loadingText.textContent = "Ready.";
+      })
+      .then((unityInstance) => {
+        unityInstanceReference = unityInstance;
+        loadingBar.classList.add("is-finished");
+
+        setTimeout(() => {
+          loadingBar.style.display = "none";
+        }, 450);
+
+        fullscreenButtons.forEach((button) => {
+          button.addEventListener("click", () => unityInstance.SetFullscreen(1));
+        });
+      })
+      .catch((message) => {
+        loadingText.textContent = "The build could not be started.";
+        unityShowBanner(message, "error");
+      });
+    };
+
+    loaderScript.onerror = () => {
+      loadingText.textContent = "The Unity loader file could not be found.";
+      unityShowBanner(
+        "Could not load Build/Vanguard.loader.js. Check that the Build folder is next to index.html.",
+        "error"
+      );
+    };
+
+    reloadButton.addEventListener("click", () => window.location.reload());
+
+    document.addEventListener("keydown", (event) => {
+      if (
+        event.key.toLowerCase() === "f" &&
+        unityInstanceReference &&
+        !["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName)
+      ) {
+        unityInstanceReference.SetFullscreen(1);
+      }
+    });
+
+    document.body.appendChild(loaderScript);
+  </script>
+</body>
+</html>
