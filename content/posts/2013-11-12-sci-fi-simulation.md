@@ -1,16 +1,3 @@
-
----
-layout: post
-title: Sci-Fi Simulation
-date: 2013-11-12 12:00:00 +0100
-summary: Sci-Fi Simulation
-categories:
-keywords: scifi, simulation
-tags:
- - scifi
- - simulation
----
-
 ## Simulation and Sci-Fi
 
 In the previous post I talked about my fantasy games, today I am to discuss my other long running project wich is my other passion Sci-Fi and simulation games. Ever since I read books from Isaac Asimov I was haunted by the idea of looking at the gaming field at a wider perspective both in scale and in time. This idea lead me to the following evolution of programs.
@@ -29,7 +16,7 @@ Galaxy is my current concept for this simulation idea, for the last few weeks I 
 
 Once thats done all that remains is to implement some sort of user GUI so the player can influence the events of the universe, or just lay back down and watch his species spread out into the galaxy to meet their faith.
 
-![Galaxy Simulator | Alpha Version](https://youtu.be/zxt4Z7YUkBk)
+[![Galaxy Simulator | Alpha Version](https://img.youtube.com/vi/zxt4Z7YUkBk/maxresdefault.jpg)](https://youtu.be/zxt4Z7YUkBk)
 
 ## Upcoming...
 

@@ -10,15 +10,15 @@ The site is designed for GitHub Pages and does not require a build step, package
 cvblog/
 ├── index.html                 # Landing page
 ├── about/                     # About / web CV
-├── projects/                  # Software and project portfolio
-├── games/                     # Curated game listing
+├── projects/                  # Compatibility redirect to Games
+├── games/                     # Unified games and project listing
 ├── blog/                      # Blog index and clean article routes
 ├── contact/                   # Verified links from the old site
 ├── content/posts/             # Original Markdown article sources
 ├── play/                      # Self-contained browser game builds
 ├── assets/
 │   ├── css/site.css           # Site-wide design system
-│   ├── js/data.js             # Curated project/game/post metadata
+│   ├── js/data.js             # Curated game/post metadata
 │   ├── js/site.js             # Shared layout and rendering code
 │   └── images/                # Copied screenshots and artwork
 ├── CONTENT_SOURCES.md         # Content provenance and audit notes
@@ -68,18 +68,16 @@ The Blogspot site redirected anonymous access to Google sign-in during migration
 
 The small built-in renderer supports headings, paragraphs, unordered lists, links, images, inline code, bold and emphasis. For more complex articles, author the body directly as HTML or extend the renderer.
 
-## Add a project
-
-Add an object to the `projects` array in `assets/js/data.js`. Supported fields are `title`, `year`, `description`, `tech`, `image`, and optional `post`. Put referenced images in `assets/images/`.
-
 ## Add a game
 
 1. Copy the complete static/browser build into `play/<slug>/`.
 2. Confirm that `play/<slug>/index.html` works from a local HTTP server.
-3. Add an object to the `games` array in `assets/js/data.js`.
+3. Add one object to the `games` array in `assets/js/data.js`. The `slug` must be unique.
 4. Put its cover image in `assets/images/`, or set `image` to `null` for a generated typographic cover.
 
 Keep every build's internal `Build/`, `TemplateData/`, and `StreamingAssets/` paths unchanged. Older Unity loaders depend on exact filenames and relative directory placement.
+
+Documented projects without a browser build belong in the same `games` array with `playable: false` and a `post` slug. They appear once in the Games archive with a link to their project notes instead of a Play button.
 
 ## Maintenance notes
 

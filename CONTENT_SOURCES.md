@@ -4,11 +4,11 @@ This file records what was inspected, what was used, and what was intentionally 
 
 ## Source summary
 
-| Source | Inspected | Result |
-| --- | --- | --- |
-| `../freamdev.github.io/` | All 64 files, including configuration, posts, layouts, tabs and images | Identity, contact links, site positioning, 15 articles, project descriptions and screenshots were imported. |
-| `../games/` | All 638 files / 636 paths reported by `rg`, including every HTML entry point, README and build directory | 14 presentable browser builds were copied. Other builds are inventoried below. |
-| `https://freamdev.blogspot.com/` | Homepage, JSON feed, RSS feed, sitemap and web search | Homepage redirected to Google sign-in; feeds and sitemap returned 401. No inaccessible content was invented. |
+| Source                           | Inspected                                                                                                | Result                                                                                                       |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `../freamdev.github.io/`         | All 64 files, including configuration, posts, layouts, tabs and images                                   | Identity, contact links, site positioning, 15 articles, project descriptions and screenshots were imported.  |
+| `../games/`                      | All 638 files / 636 paths reported by `rg`, including every HTML entry point, README and build directory | 14 presentable browser builds were copied. Other builds are inventoried below.                               |
+| `https://freamdev.blogspot.com/` | Homepage, JSON feed, RSS feed, sitemap and web search                                                    | Homepage redirected to Google sign-in; feeds and sitemap returned 401. No inaccessible content was invented. |
 
 The filesystem modification dates in the supplied `games` tree were all `2026-09-26`, so they were not treated as reliable creation or release dates.
 
@@ -29,55 +29,54 @@ No LinkedIn URL, employer history, job titles, full legal name, education timeli
 
 All article bodies were copied without rewriting from `../freamdev.github.io/_posts/` to `content/posts/`. Metadata summaries in the UI were lightly normalized for readability.
 
-| Article | Date | Source | Local route |
-| --- | --- | --- | --- |
-| Racer game | 2023-09-05 | `_posts/2023-09-05-racer-game.md` | `blog/racer-game/` |
+| Article            | Date       | Source                                    | Local route                |
+| ------------------ | ---------- | ----------------------------------------- | -------------------------- |
+| Racer game         | 2023-09-05 | `_posts/2023-09-05-racer-game.md`         | `blog/racer-game/`         |
 | The Quantum Menace | 2021-04-25 | `_posts/2021-04-25-the-quantum-menace.md` | `blog/the-quantum-menace/` |
-| Pixel Raiders | 2020-07-30 | `_posts/2020-07-30-pixel-raiders.md` | `blog/pixel-raiders/` |
-| Loot Boxes | 2020-01-10 | `_posts/2020-01-10-loot-boxes.md` | `blog/loot-boxes/` |
-| UFO Landing 3D | 2019-11-15 | `_posts/2019-11-15-ufo-lander.md` | `blog/ufo-lander/` |
-| Skyfall | 2019-10-20 | `_posts/2019-10-20-skyfall.md` | `blog/skyfall/` |
-| Zombie Shooter | 2019-09-28 | `_posts/2019-09-28-zombie-shooter.md` | `blog/zombie-shooter/` |
-| Dungeon Explorer | 2019-06-11 | `_posts/2019-06-11-dungeon-explorer.md` | `blog/dungeon-explorer/` |
-| Mistery Dungeon | 2013-12-31 | `_posts/2013-12-31-mistery-dungeon.md` | `blog/mistery-dungeon/` |
-| Spwarces | 2013-12-25 | `_posts/2013-12-25-spwarces.md` | `blog/spwarces/` |
-| Land of Asciia | 2013-12-08 | `_posts/2013-12-08-land-of-asciia.md` | `blog/land-of-asciia/` |
-| Sci-Fi Simulation | 2013-11-12 | `_posts/2013-11-12-sci-fi-simulation.md` | `blog/sci-fi-simulation/` |
-| Fantasy RPG Games | 2013-11-06 | `_posts/2013-11-06-fantasy-rpg-games.md` | `blog/fantasy-rpg-games/` |
-| Tower Defense | 2013-11-05 | `_posts/2013-11-05-tower-defense.md` | `blog/tower-defense/` |
-| Moon-Base | 2013-10-23 | `_posts/2013-10-23-moon-base.md` | `blog/moon-base/` |
+| Pixel Raiders      | 2020-07-30 | `_posts/2020-07-30-pixel-raiders.md`      | `blog/pixel-raiders/`      |
+| Loot Boxes         | 2020-01-10 | `_posts/2020-01-10-loot-boxes.md`         | `blog/loot-boxes/`         |
+| UFO Landing 3D     | 2019-11-15 | `_posts/2019-11-15-ufo-lander.md`         | `blog/ufo-lander/`         |
+| Skyfall            | 2019-10-20 | `_posts/2019-10-20-skyfall.md`            | `blog/skyfall/`            |
+| Zombie Shooter     | 2019-09-28 | `_posts/2019-09-28-zombie-shooter.md`     | `blog/zombie-shooter/`     |
+| Dungeon Explorer   | 2019-06-11 | `_posts/2019-06-11-dungeon-explorer.md`   | `blog/dungeon-explorer/`   |
+| Mistery Dungeon    | 2013-12-31 | `_posts/2013-12-31-mistery-dungeon.md`    | `blog/mistery-dungeon/`    |
+| Spwarces           | 2013-12-25 | `_posts/2013-12-25-spwarces.md`           | `blog/spwarces/`           |
+| Land of Asciia     | 2013-12-08 | `_posts/2013-12-08-land-of-asciia.md`     | `blog/land-of-asciia/`     |
+| Sci-Fi Simulation  | 2013-11-12 | `_posts/2013-11-12-sci-fi-simulation.md`  | `blog/sci-fi-simulation/`  |
+| Fantasy RPG Games  | 2013-11-06 | `_posts/2013-11-06-fantasy-rpg-games.md`  | `blog/fantasy-rpg-games/`  |
+| Tower Defense      | 2013-11-05 | `_posts/2013-11-05-tower-defense.md`      | `blog/tower-defense/`      |
+| Moon-Base          | 2013-10-23 | `_posts/2013-10-23-moon-base.md`          | `blog/moon-base/`          |
 
 Associated images came from `../freamdev.github.io/assets/img/`. The favicon and cake/brand artwork were also retained in the asset archive even where the redesign does not directly display every file.
 
-## Portfolio projects
+## Documented game projects
 
 - **Moon-Base** — sourced from `2013-10-23-moon-base.md`; a school thesis, block-based RTS with four modes and a map editor. The external Google Drive source link remains in the article.
 - **Tower Defense** — sourced from `2013-11-05-tower-defense.md`; a Java/OpenGL learning project.
 - **Dungeon Crawler, Game of Dragons and Mistery Dungeon** — consolidated into “Fantasy RPG Experiments”; source is `2013-11-06-fantasy-rpg-games.md` plus `2013-12-31-mistery-dungeon.md`.
 - **Stars and Galaxy** — consolidated into “Sci-Fi Simulations”; source is `2013-11-12-sci-fi-simulation.md`.
 - **Land of Asciia** — sourced from `2013-12-08-land-of-asciia.md`; explicitly described as a C project.
-- **Angular Weather** — sourced from `../games/viki-weather/README.md` and its Angular/TypeScript source. It is listed as a code project, not deployed, because only source files were present and the weather API configuration may be stale or private.
 
 ## Copied playable games
 
 The following builds were copied without modifying their internal loaders or binary assets:
 
-| Site route | Source directory | Supporting description / image |
-| --- | --- | --- |
-| `play/ludicrous-racer/` | `../games/Racer/` | 2023 article and `Racer/Build/webgl.jpg` |
-| `play/vanguard-guild/` | `../games/VanguardGuild/` | Custom build page, `Content/*.json`, screenshots and hero data |
-| `play/the-quantum-menace/` | `../games/LD48/Web/` | 2021 article, `LD48/MainScreen.png`; Ludum Dare 48 |
-| `play/pixel-raiders/` | `../games/PixelRaiders/Deploys/Version2/` | 2020 article and `games/media/PixelRaiders.png`; latest of two documented versions |
-| `play/loot-boxes/` | `../games/LootBoxes/` | 2020 article and `games/media/LootBoxes.png` |
-| `play/zombie-shooter/` | `../games/ZombieShooter/` | 2019 article and `games/media/ZombieShooter.png` |
-| `play/skyfall/` | `../games/Skyfall/` | 2019 article and `games/media/Skyfall.png` |
-| `play/dungeon-explorer/` | `../games/DungeonExplorer/` | 2019 article and `games/media/DungeonExplorer.png` |
-| `play/ufo-lander/` | `../games/UFOLander/` | 2019 article and `games/media/UFOLander.png` |
-| `play/raiders/` | `../games/Raiders/` | `games/media/Raiders.png`; build title only |
-| `play/runic-summoner/` | `../games/RunicSummoner/` | Build page identifies product version 0.2.0 |
-| `play/adventure-run/` | `../games/AdventureRun/` | Build title only; no unsupported gameplay description added |
-| `play/clicker-warrior/` | `../games/ClickerWarrior/` | Build page identifies product version 0.1.0 |
-| `play/the-last-bastion/` | `../games/TheLastBastion/` | Build title only; no unsupported gameplay description added |
+| Site route                 | Source directory                          | Supporting description / image                                                     |
+| -------------------------- | ----------------------------------------- | ---------------------------------------------------------------------------------- |
+| `play/ludicrous-racer/`    | `../games/Racer/`                         | 2023 article and `Racer/Build/webgl.jpg`                                           |
+| `play/vanguard-guild/`     | `../games/VanguardGuild/`                 | Custom build page, `Content/*.json`, screenshots and hero data                     |
+| `play/the-quantum-menace/` | `../games/LD48/Web/`                      | 2021 article, `LD48/MainScreen.png`; Ludum Dare 48                                 |
+| `play/pixel-raiders/`      | `../games/PixelRaiders/Deploys/Version2/` | 2020 article and `games/media/PixelRaiders.png`; latest of two documented versions |
+| `play/loot-boxes/`         | `../games/LootBoxes/`                     | 2020 article and `games/media/LootBoxes.png`                                       |
+| `play/zombie-shooter/`     | `../games/ZombieShooter/`                 | 2019 article and `games/media/ZombieShooter.png`                                   |
+| `play/skyfall/`            | `../games/Skyfall/`                       | 2019 article and `games/media/Skyfall.png`                                         |
+| `play/dungeon-explorer/`   | `../games/DungeonExplorer/`               | 2019 article and `games/media/DungeonExplorer.png`                                 |
+| `play/ufo-lander/`         | `../games/UFOLander/`                     | 2019 article and `games/media/UFOLander.png`                                       |
+| `play/raiders/`            | `../games/Raiders/`                       | `games/media/Raiders.png`; build title only                                        |
+| `play/runic-summoner/`     | `../games/RunicSummoner/`                 | Build page identifies product version 0.2.0                                        |
+| `play/adventure-run/`      | `../games/AdventureRun/`                  | Build title only; no unsupported gameplay description added                        |
+| `play/clicker-warrior/`    | `../games/ClickerWarrior/`                | Build page identifies product version 0.1.0                                        |
+| `play/the-last-bastion/`   | `../games/TheLastBastion/`                | Build title only; no unsupported gameplay description added                        |
 
 ## Games and experiments not copied
 
@@ -95,7 +94,7 @@ These remain in the read-only source tree. They were excluded to keep the publis
 - `LD48/webJam/` — duplicate jam build; `LD48/Web/` was retained. Windows and itch ZIP packages were not copied because the web build is directly playable.
 - `Test/` — explicitly named test build (`URP_2D`).
 - root `Build/` and root `TemplateData/` — orphaned Unity output without a matching root player page.
-- `viki-weather/` — source-only Angular exercise; listed under Projects instead of Games.
+- `viki-weather/` — source-only Angular exercise; omitted from Games because it is a standalone web app rather than a game project.
 - `HtmlLooter/` — collection of images and one loadout HTML tool, not a documented game release.
 - `htmls/` — unrelated standalone prototypes and tools (`flight`, `flight2026`, `climb`, `cupid`, `cursor`, `office`, `rainbow`, `vampire`) without supporting descriptions. Retained only in the source archive.
 - `org-slash/` and `speaker-picker/` — standalone web tools rather than documented games; omitted from the game showcase.
