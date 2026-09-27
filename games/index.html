@@ -9,33 +9,25 @@
     />
     <title>Games · Freamdev</title>
     <link rel="stylesheet" href="../assets/css/site.css" />
-  </head>
+  <script>
+  window.goatcounter = {
+    path: function (p) {
+      return location.host + p;
+    }
+  };
+</script>
+
+<script
+  data-goatcounter="https://srv.vprog.hu/goats/count"
+  async
+  src="https://srv.vprog.hu/goats/count.js">
+</script></head>
   <body data-page="games">
     <div id="site-header"></div>
     <main id="main">
-      <header class="page-hero">
-        <div class="shell">
-          <p class="eyebrow">Games collection</p>
-          <h1>Games built to be explored.</h1>
-          <p>
-            Play browser games and discover earlier game projects, all in one
-            place.
-          </p>
-        </div>
-      </header>
+      <header class="page-title shell"><h1>Games</h1></header>
       <section class="section">
         <div class="shell">
-          <div class="filter-bar" aria-label="Filter games">
-            <button class="filter-button active" data-filter="all">All</button
-            ><button class="filter-button" data-filter="playable">
-              Playable</button
-            ><button class="filter-button" data-filter="article">
-              With articles</button
-            ><button class="filter-button" data-filter="unity">Unity</button
-            ><button class="filter-button" data-filter="game jam">
-              Game jam</button
-            ><button class="filter-button" data-filter="2d">2D</button>
-          </div>
           <div id="game-grid" class="grid"></div>
         </div>
       </section>

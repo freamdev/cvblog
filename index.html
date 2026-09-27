@@ -9,7 +9,19 @@
     />
     <title>Freamdev · Developer & Game Maker</title>
     <link rel="stylesheet" href="assets/css/site.css" />
-  </head>
+  <script>
+  window.goatcounter = {
+    path: function (p) {
+      return location.host + p;
+    }
+  };
+</script>
+
+<script
+  data-goatcounter="https://srv.vprog.hu/goats/count"
+  async
+  src="https://srv.vprog.hu/goats/count.js">
+</script></head>
   <body data-page="home">
     <div id="site-header"></div>
     <main id="main">
@@ -24,17 +36,22 @@
             <a class="button" href="games/">Explore games</a>
           </div>
         </div>
-        <div class="terminal" aria-label="Developer profile">
+        <div class="terminal" aria-label="Unity C# example">
           <div class="terminal-bar">
             <span></span><span></span><span></span>
           </div>
           <div class="terminal-body">
-            <div><b>profile</b> = {</div>
-            <div>&nbsp;&nbsp;focus: ["games", "systems", "web"],</div>
-            <div>
-              &nbsp;&nbsp;tools: ["Unity", "C#", "Java", "C", "Angular"],
-            </div>
-            <div>&nbsp;&nbsp;mode: "learning by building"</div>
+            <div><b>using</b> UnityEngine;</div>
+            <div>&nbsp;</div>
+            <div><b>public sealed class</b> KeepIterating : MonoBehaviour</div>
+            <div>{</div>
+            <div>&nbsp;&nbsp;[SerializeField] float speed = 90f;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;&nbsp;<b>void</b> Update() =&gt;</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;transform.Rotate(</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vector3.up,</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;speed * Time.deltaTime</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;);</div>
             <div>}</div>
           </div>
         </div>

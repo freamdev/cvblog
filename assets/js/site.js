@@ -13,13 +13,12 @@
 
   function tags(items) { return `<div class="tags">${items.map(x => `<span class="tag">${esc(x)}</span>`).join("")}</div>`; }
   function gameCard(game) {
-    const kind = [...game.tech, game.playable ? "playable" : "article"].join(" ").toLowerCase();
     const actions = [
       game.playable ? `<a class="button" href="${root}play/${game.slug}/" target="_blank" rel="noopener noreferrer">Play</a>` : "",
       game.featured ? `<a class="button secondary" href="${root}games/${game.slug}/">Details</a>` : "",
       game.post ? `<a class="button secondary" href="${root}blog/${game.post}/">Read more</a>` : ""
     ].join("");
-    return `<article class="card" data-kind="${kind}">${game.image ? `<img class="card-image" src="${image(game.image)}" alt="${esc(game.title)} screenshot" loading="lazy">` : `<div class="card-placeholder" aria-hidden="true">${esc(game.title.slice(0,2).toUpperCase())}</div>`}<div class="card-body"><div class="meta">${esc(game.status)}</div><h3>${esc(game.title)}</h3><p>${esc(game.description)}</p>${tags(game.tech)}${actions ? `<div class="card-actions">${actions}</div>` : ""}</div></article>`;
+    return `<article class="card">${game.image ? `<img class="card-image" src="${image(game.image)}" alt="${esc(game.title)} screenshot" loading="lazy">` : `<div class="card-placeholder" aria-hidden="true">${esc(game.title.slice(0,2).toUpperCase())}</div>`}<div class="card-body"><div class="meta">${esc(game.status)}</div><h3>${esc(game.title)}</h3><p>${esc(game.description)}</p>${tags(game.tech)}${actions ? `<div class="card-actions">${actions}</div>` : ""}</div></article>`;
   }
   function postCard(post) {
     return `<article class="card">${post.image ? `<img class="card-image" src="${image(post.image)}" alt="" loading="lazy">` : ""}<div class="card-body"><div class="meta"><time datetime="${post.date}">${new Date(post.date + "T12:00:00").toLocaleDateString("en", {year:"numeric", month:"short", day:"numeric"})}</time></div><h3><a href="${root}blog/${post.slug}/">${esc(post.title)}</a></h3><p>${esc(post.summary)}</p>${tags(post.tags)}</div></article>`;
@@ -38,13 +37,6 @@
   if (gameGrid) gameGrid.innerHTML = uniqueGames.map(gameCard).join("");
   const posts = document.querySelector("#post-grid");
   if (posts) posts.innerHTML = data.posts.map(postCard).join("");
-
-  document.querySelectorAll("[data-filter]").forEach(button => button.addEventListener("click", () => {
-    document.querySelectorAll("[data-filter]").forEach(x => x.classList.remove("active"));
-    button.classList.add("active");
-    const filter = button.dataset.filter;
-    document.querySelectorAll("#game-grid .card").forEach(card => card.hidden = filter !== "all" && !card.dataset.kind.includes(filter));
-  }));
 
   function inline(text) {
     return text
