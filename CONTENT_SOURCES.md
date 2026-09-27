@@ -19,11 +19,11 @@ From `../freamdev.github.io/_config.yml` and `_data/contact.yml`:
 - Display identity: **Freamdev**
 - Description: personal blog about game development
 - GitHub: <https://github.com/freamdev>
-- Twitter: <https://twitter.com/freamdev>
+- LinkedIn: <https://www.linkedin.com/in/richard-pinter/> (provided by the site owner)
 - Email: <freamdev@gmail.com>
 - Timezone: Europe/Budapest
 
-No LinkedIn URL, employer history, job titles, full legal name, education timeline, phone number or postal location was present. The old `about.md` contained only the theme's placeholder prompt. These fields were omitted rather than inferred.
+No employer history, job titles, full legal name, education timeline, phone number or postal location was present. The old `about.md` contained only the theme's placeholder prompt. These fields were omitted rather than inferred.
 
 ## Imported local articles
 

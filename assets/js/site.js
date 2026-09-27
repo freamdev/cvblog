@@ -7,7 +7,7 @@
   const navItems = [["Home", ""], ["About", "about/"], ["Games", "games/"], ["Blog", "blog/"], ["Contact", "contact/"]];
 
   document.querySelector("#site-header").innerHTML = `<a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="shell nav"><a class="brand" href="${root}"><span class="brand-mark">F_</span><span>Freamdev</span></a><button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button><nav id="nav-links" class="nav-links" aria-label="Primary">${navItems.map(([label, path]) => `<a href="${root}${path}" ${page === label.toLowerCase() ? 'aria-current="page"' : ""}>${label}</a>`).join("")}</nav></div></header>`;
-  document.querySelector("#site-footer").innerHTML = `<footer class="footer"><div class="shell footer-row"><span>© ${new Date().getFullYear()} Freamdev · Built as a static site.</span><span class="footer-links"><a href="https://github.com/freamdev">GitHub</a><a href="https://twitter.com/freamdev">Twitter</a><a href="mailto:freamdev@gmail.com">Email</a></span></div></footer>`;
+  document.querySelector("#site-footer").innerHTML = `<footer class="footer"><div class="shell footer-row"><span>© ${new Date().getFullYear()} Freamdev · Built as a static site.</span><span class="footer-links"><a href="https://github.com/freamdev">GitHub</a><a href="https://www.linkedin.com/in/richard-pinter/">LinkedIn</a><a href="mailto:freamdev@gmail.com">Email</a></span></div></footer>`;
   const toggle = document.querySelector(".menu-toggle");
   toggle.addEventListener("click", () => { const menu = document.querySelector(".nav-links"); const open = menu.classList.toggle("open"); toggle.setAttribute("aria-expanded", String(open)); });
 
