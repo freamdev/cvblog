@@ -57,6 +57,21 @@ Associated images came from `../freamdev.github.io/assets/img/`. The favicon and
 - **Stars and Galaxy** — consolidated into “Sci-Fi Simulations”; source is `2013-11-12-sci-fi-simulation.md`.
 - **Land of Asciia** — sourced from `2013-12-08-land-of-asciia.md`; explicitly described as a C project.
 
+## Ludum Dare projects
+
+The site owner supplied the event, release month, overall placement, Ludum Dare entry URL and repository URL (where listed) for these projects:
+
+| Project                         | Event | Released       | Overall | Repository                          |
+| ------------------------------- | ----- | -------------- | ------- | ----------------------------------- |
+| The Quantum Menace              | LD48  | April 2021     | 784th   | Not supplied                        |
+| Little Boat Delivery Adventures | LD53  | April 2023     | 323rd   | `https://github.com/freamdev/ld-53` |
+| Vessel Run                      | LD54  | September 2023 | 293rd   | `https://github.com/freamdev/ld-54` |
+| Runic Summoner                  | LD55  | April 2024     | 215th   | `https://github.com/freamdev/ld-55` |
+| Forged Below                    | LD57  | April 2025     | 194th   | `https://github.com/freamdev/ld-57` |
+| Bitcatcher                      | LD59  | April 2026     | 220th   | `https://github.com/freamdev/ld-59` |
+
+The owner also supplied the corresponding `assets/images/ld48.png` through `ld59.png` project images used by the cards and detail pages.
+
 ## Copied playable games
 
 The following builds were copied without modifying their internal loaders or binary assets:
@@ -88,7 +103,7 @@ These remain in the read-only source tree. They were excluded to keep the publis
 - `CLeaderboard/` — 72.2 MB; identified only as `LeaderboardSimulator`, with no portfolio description.
 - `IDHTemu/` — 55.8 MB; identified as `IdleHeroesCombatCopy`, so it was treated as an emulation/prototype rather than a public portfolio release.
 - `CloudSave/` — 42.2 MB; appears to be an `IdleCommon` cloud-save/service experiment and may require external Unity services.
-- `LD53/` — 42.4 MB; a playable build exists, but no title beyond `LD53`, screenshot, jam theme or description was found.
+- `LD53/` — 42.4 MB; now identified by the site owner as Little Boat Delivery Adventures. The project is documented and linked to its Ludum Dare entry and source repository, but this additional playable build remains uncopied to avoid duplicating a large build.
 - `Dungeon3D/` and `oldDungeonExplorer/` — older/duplicate builds of Dungeon Explorer; the documented `DungeonExplorer/` version was retained.
 - `PixelRaiders/Deploys/Version1/` — superseded by documented Version 2.
 - `LD48/webJam/` — duplicate jam build; `LD48/Web/` was retained. Windows and itch ZIP packages were not copied because the web build is directly playable.

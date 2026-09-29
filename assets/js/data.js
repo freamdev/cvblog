@@ -1,7 +1,7 @@
 window.SITE_DATA = {
   posts: [
     { slug: "racer-game", file: "2023-09-05-racer-game.md", title: "Racer game", date: "2023-09-05", summary: "An early demo of a drag racing game, with a sample AI opponent.", tags: ["racer", "gamedev"], image: "2023-09-05-racer/titleImage.png" },
-    { slug: "the-quantum-menace", file: "2021-04-25-the-quantum-menace.md", title: "The Quantum Menace", date: "2021-04-25", summary: "Created for the 48th Ludum Dare game jam.", tags: ["game", "ludum-dare"], image: "2021-04-25-the-quantum-menace/the-quantum-menace.png" },
+    { slug: "the-quantum-menace", file: "2021-04-25-the-quantum-menace.md", title: "The Quantum Menace", date: "2021-04-25", summary: "My Ludum Dare 48 entry, ranked 784th overall.", tags: ["game", "ludum-dare"], image: "ld48.png" },
     { slug: "pixel-raiders", file: "2020-07-30-pixel-raiders.md", title: "Pixel Raiders", date: "2020-07-30", summary: "A 2D idle game with procedurally generated dungeon locations.", tags: ["2D", "idle"], image: "2020-07-30-pixel-raiders/pixel-raiders.png" },
     { slug: "loot-boxes", file: "2020-01-10-loot-boxes.md", title: "Loot Boxes", date: "2020-01-10", summary: "A work-in-progress raid simulator.", tags: ["raid", "simulator"], image: "2020-01-10-loot-boxes/loot-boxes.png" },
     { slug: "ufo-lander", file: "2019-11-15-ufo-lander.md", title: "UFO Landing 3D", date: "2019-11-15", summary: "A university game: land on the red sphere and avoid everything.", tags: ["ufo", "lander"], image: "2019-11-15-ufo-lander/ufo-lander.png" },
@@ -17,9 +17,14 @@ window.SITE_DATA = {
     { slug: "moon-base", file: "2013-10-23-moon-base.md", title: "Moon-Base", date: "2013-10-23", summary: "A block-based RTS thesis project with four modes and a map editor.", tags: ["rts", "block-based"], image: "2013-10-23-moon-base/moon-base.png" }
   ],
   games: [
+    { slug: "bitcatcher", title: "Bitcatcher", description: "Catch streaming bits and assemble valid codewords before time runs out.", tech: ["Ludum Dare", "Game jam"], status: "", image: "ld59.png", playable: false, details: true },
+    { slug: "forged-below", title: "Forged Below", description: "Forge requested items and grow a dwarven smithy deep beneath the mountain.", tech: ["Ludum Dare", "Game jam"], status: "", image: "ld57.png", playable: false, details: true },
+    { slug: "runic-summoner", title: "Runic Summoner", description: "Charge three runes while increasingly powerful bosses are summoned.", tech: ["Unity", "WebGL", "Ludum Dare"], status: "", image: "ld55.png", playable: true, details: true },
+    { slug: "vessel-run", title: "Vessel Run", description: "Balance engines and shields while hauling cargo through asteroid fields.", tech: ["Ludum Dare", "Game jam"], status: "", image: "ld54.png", playable: false, details: true },
+    { slug: "little-boat-delivery-adventures", title: "Little Boat Delivery Adventures", description: "Trade goods between islands to pay off your little red boat’s debt.", tech: ["Unity", "Ludum Dare", "Game jam"], status: "", image: "ld53.png", playable: false, details: true },
+    { slug: "the-quantum-menace", title: "The Quantum Menace", description: "Recapture antivirus processors and fight off endless hordes of quantum cats.", tech: ["Unity", "WebGL", "Ludum Dare"], status: "", image: "ld48.png", playable: true, featured: true, details: true },
     { slug: "ludicrous-racer", title: "Ludicrous Racer", description: "Early drag-racing demo with a sample AI opponent.", tech: ["Unity", "WebGL"], status: "Early demo", image: "2023-09-05-racer/titleImage.png", playable: true, featured: true },
     { slug: "vanguard-guild", title: "Guild Vanguard", description: "A fantasy-themed Unity game with illustrated heroes and battle scenes.", tech: ["Unity", "WebGL"], status: "Playable", image: "vanguard-gameplay.jpg", playable: true, featured: true },
-    { slug: "the-quantum-menace", title: "The Quantum Menace", description: "Created for the 48th Ludum Dare game jam.", tech: ["Unity", "WebGL", "Game jam"], status: "Game jam", image: "quantum-menace.png", playable: true, featured: true },
     { slug: "pixel-raiders", title: "Pixel Raiders", description: "A 2D idle prototype with generated dungeon locations.", tech: ["Unity", "WebGL", "2D"], status: "WIP · v0.2", image: "PixelRaiders.png", playable: true },
     { slug: "loot-boxes", title: "Loot Boxes", description: "A work-in-progress raid simulator.", tech: ["Unity", "WebGL"], status: "WIP", image: "LootBoxes.png", playable: true },
     { slug: "zombie-shooter", title: "Zombie Shooter", description: "Fast-paced zombie shooting fun.", tech: ["Unity", "WebGL"], status: "WIP", image: "ZombieShooter.png", playable: true },
@@ -27,7 +32,6 @@ window.SITE_DATA = {
     { slug: "dungeon-explorer", title: "Dungeon Explorer", description: "A 3D dungeon explorer prototype.", tech: ["Unity", "WebGL", "3D"], status: "WIP", image: "DungeonExplorer.png", playable: true },
     { slug: "ufo-lander", title: "UFO Landing 3D", description: "Land on the red sphere; avoid everything.", tech: ["Unity", "WebGL"], status: "University project", image: "UFOLander.png", playable: true },
     { slug: "raiders", title: "Raiders", description: "A Unity game that runs directly in the browser.", tech: ["Unity", "WebGL"], status: "Playable", image: "Raiders.png", playable: true },
-    { slug: "runic-summoner", title: "Runic Summoner", description: "Version 0.2.0 of a Unity game you can play in the browser.", tech: ["Unity", "WebGL"], status: "v0.2.0", image: null, playable: true },
     { slug: "adventure-run", title: "Adventure Run", description: "A Unity game you can launch and play in the browser.", tech: ["Unity", "WebGL"], status: "Playable", image: null, playable: true },
     { slug: "clicker-warrior", title: "Clicker Warrior", description: "Version 0.1.0 of a Unity game you can play in the browser.", tech: ["Unity", "WebGL"], status: "v0.1.0", image: null, playable: true },
     { slug: "the-last-bastion", title: "The Last Bastion", description: "A Unity game that runs directly in the browser.", tech: ["Unity", "WebGL"], status: "Playable", image: null, playable: true },

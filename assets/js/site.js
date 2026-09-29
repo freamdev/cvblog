@@ -11,17 +11,16 @@
   const toggle = document.querySelector(".menu-toggle");
   toggle.addEventListener("click", () => { const menu = document.querySelector(".nav-links"); const open = menu.classList.toggle("open"); toggle.setAttribute("aria-expanded", String(open)); });
 
-  function tags(items) { return `<div class="tags">${items.map(x => `<span class="tag">${esc(x)}</span>`).join("")}</div>`; }
   function gameCard(game) {
     const actions = [
       game.playable ? `<a class="button" href="${root}play/${game.slug}/" target="_blank" rel="noopener noreferrer">Play</a>` : "",
-      game.featured ? `<a class="button secondary" href="${root}games/${game.slug}/">Details</a>` : "",
+      game.featured || game.details ? `<a class="button secondary" href="${root}games/${game.slug}/">Details</a>` : "",
       game.post ? `<a class="button secondary" href="${root}blog/${game.post}/">Read more</a>` : ""
     ].join("");
-    return `<article class="card">${game.image ? `<img class="card-image" src="${image(game.image)}" alt="${esc(game.title)} screenshot" loading="lazy">` : `<div class="card-placeholder" aria-hidden="true">${esc(game.title.slice(0,2).toUpperCase())}</div>`}<div class="card-body"><div class="meta">${esc(game.status)}</div><h3>${esc(game.title)}</h3><p>${esc(game.description)}</p>${tags(game.tech)}${actions ? `<div class="card-actions">${actions}</div>` : ""}</div></article>`;
+    return `<article class="card">${game.image ? `<img class="card-image" src="${image(game.image)}" alt="${esc(game.title)} screenshot" loading="lazy">` : `<div class="card-placeholder" aria-hidden="true">${esc(game.title.slice(0,2).toUpperCase())}</div>`}<div class="card-body">${game.status ? `<div class="meta">${esc(game.status)}</div>` : ""}<h3>${esc(game.title)}</h3><p>${esc(game.description)}</p>${actions ? `<div class="card-actions">${actions}</div>` : ""}</div></article>`;
   }
   function postCard(post) {
-    return `<article class="card">${post.image ? `<img class="card-image" src="${image(post.image)}" alt="" loading="lazy">` : ""}<div class="card-body"><div class="meta"><time datetime="${post.date}">${new Date(post.date + "T12:00:00").toLocaleDateString("en", {year:"numeric", month:"short", day:"numeric"})}</time></div><h3><a href="${root}blog/${post.slug}/">${esc(post.title)}</a></h3><p>${esc(post.summary)}</p>${tags(post.tags)}</div></article>`;
+    return `<article class="card">${post.image ? `<img class="card-image" src="${image(post.image)}" alt="" loading="lazy">` : ""}<div class="card-body"><div class="meta"><time datetime="${post.date}">${new Date(post.date + "T12:00:00").toLocaleDateString("en", {year:"numeric", month:"short", day:"numeric"})}</time></div><h3><a href="${root}blog/${post.slug}/">${esc(post.title)}</a></h3><p>${esc(post.summary)}</p></div></article>`;
   }
   const uniqueGames = data.games.filter((game, index, all) => {
     const title = game.title.trim().toLowerCase();
@@ -86,7 +85,7 @@
     document.title = `${post.title} · Freamdev`;
     document.querySelector("#article-title").textContent = post.title;
     document.querySelector("#article-date").textContent = new Date(post.date + "T12:00:00").toLocaleDateString("en", {year:"numeric", month:"long", day:"numeric"});
-    document.querySelector("#article-tags").innerHTML = tags(post.tags);
+    document.querySelector("#article-tags")?.remove();
     const cover = document.querySelector("#article-cover");
     if (post.image) { cover.src = image(post.image); cover.alt = `${post.title} screenshot`; } else cover.remove();
     fetch(`${root}content/posts/${post.file}`).then(r => { if (!r.ok) throw new Error(); return r.text(); }).then(text => article.innerHTML = markdown(text)).catch(() => article.innerHTML = '<div class="notice">The article could not be loaded. Serve this site over HTTP rather than opening it as a file.</div>');
