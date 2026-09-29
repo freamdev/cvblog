@@ -80,8 +80,6 @@ The following builds were copied without modifying their internal loaders or bin
 | -------------------------- | ----------------------------------------- | ---------------------------------------------------------------------------------- |
 | `play/ludicrous-racer/`    | `../games/Racer/`                         | 2023 article and `Racer/Build/webgl.jpg`                                           |
 | `play/vanguard-guild/`     | `../games/VanguardGuild/`                 | Custom build page, `Content/*.json`, screenshots and hero data                     |
-| `play/the-quantum-menace/` | `../games/LD48/Web/`                      | 2021 article, `LD48/MainScreen.png`; Ludum Dare 48                                 |
-| `play/pixel-raiders/`      | `../games/PixelRaiders/Deploys/Version2/` | 2020 article and `games/media/PixelRaiders.png`; latest of two documented versions |
 | `play/loot-boxes/`         | `../games/LootBoxes/`                     | 2020 article and `games/media/LootBoxes.png`                                       |
 | `play/zombie-shooter/`     | `../games/ZombieShooter/`                 | 2019 article and `games/media/ZombieShooter.png`                                   |
 | `play/skyfall/`            | `../games/Skyfall/`                       | 2019 article and `games/media/Skyfall.png`                                         |
@@ -92,6 +90,8 @@ The following builds were copied without modifying their internal loaders or bin
 | `play/adventure-run/`      | `../games/AdventureRun/`                  | Build title only; no unsupported gameplay description added                        |
 | `play/clicker-warrior/`    | `../games/ClickerWarrior/`                | Build page identifies product version 0.1.0                                        |
 | `play/the-last-bastion/`   | `../games/TheLastBastion/`                | Build title only; no unsupported gameplay description added                        |
+
+The source archives for The Quantum Menace and Pixel Raiders are present under `../games/`, but their corresponding deployed `play/` directories are empty in this working copy. Their cards therefore link to details or article content instead of advertising broken browser builds.
 
 ## Games and experiments not copied
 

@@ -42,8 +42,11 @@
       .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_, alt, url) => `<img src="${rewriteUrl(url)}" alt="${esc(alt)}">`)
       .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, url) => {
         const href = rewriteUrl(url);
-        const newTab = href.startsWith(`${root}play/`) ? ' target="_blank" rel="noopener noreferrer"' : "";
-        return `<a href="${href}"${newTab}>${label}</a>`;
+        const playable = href.startsWith(`${root}play/`) || /^(?:start playing!?|play|runnable|download(?: for .*)?)[.!]?$/i.test(label.trim());
+        const related = /^(?:itch\.io|view the ludum dare entry)[.!]?$/i.test(label.trim());
+        const classes = playable ? ' class="button article-action"' : related ? ' class="button secondary article-action"' : "";
+        const newTab = playable || related ? ' target="_blank" rel="noopener noreferrer"' : "";
+        return `<a href="${href}"${classes}${newTab}>${label}</a>`;
       })
       .replace(/`([^`]+)`/g, "<code>$1</code>")
       .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
@@ -52,7 +55,7 @@
   function rewriteUrl(url) {
     if (url.startsWith("/assets/img/")) return `${root}assets/images/${url.slice(12)}`;
     if (url.startsWith("https://freamdev.com/games/")) {
-      const map = {DungeonExplorer:"dungeon-explorer", ZombieShooter:"zombie-shooter", Skyfall:"skyfall", UFOLander:"ufo-lander", LootBoxes:"loot-boxes", PixelRaiders:"pixel-raiders"};
+      const map = {DungeonExplorer:"dungeon-explorer", ZombieShooter:"zombie-shooter", Skyfall:"skyfall", UFOLander:"ufo-lander", LootBoxes:"loot-boxes"};
       const name = url.split("/games/")[1].split("/")[0];
       return map[name] ? `${root}play/${map[name]}/` : url;
     }
@@ -64,13 +67,27 @@
     let html = "", listDepth = 0, paragraph = [];
     const flushP = () => { if (paragraph.length) { html += `<p>${inline(paragraph.join(" "))}</p>`; paragraph = []; } };
     const closeLists = () => { while (listDepth) { html += "</ul>"; listDepth--; } };
-    for (const raw of lines) {
+    const cells = line => line.replace(/^\s*\||\|\s*$/g, "").split("|").map(x => x.trim());
+    for (let index = 0; index < lines.length; index++) {
+      const raw = lines[index];
       const line = raw.trimEnd();
       const heading = line.match(/^(#{2,4})\s+(.+)/);
       const item = line.match(/^(\s*)-\s+(.+)/);
       if (heading) { flushP(); closeLists(); const level = heading[1].length; html += `<h${level}>${inline(heading[2])}</h${level}>`; }
       else if (item) { flushP(); const depth = Math.floor(item[1].length / 2) + 1; while (listDepth < depth) { html += "<ul>"; listDepth++; } while (listDepth > depth) { html += "</ul>"; listDepth--; } html += `<li>${inline(item[2])}</li>`; }
-      else if (/^\|/.test(line)) { flushP(); closeLists(); paragraph.push(line.replace(/^\||\|$/g, "").split("|").map(x => x.trim()).join(" · ")); }
+      else if (/^\s*\|/.test(line) && /^\s*\|(?:\s*:?-+:?\s*\|)+\s*$/.test(lines[index + 1] || "")) {
+        flushP(); closeLists();
+        const headers = cells(line);
+        const rows = [];
+        index += 2;
+        while (index < lines.length && /^\s*\|/.test(lines[index])) {
+          rows.push(cells(lines[index]));
+          index++;
+        }
+        index--;
+        html += `<div class="table-wrap"><table><thead><tr>${headers.map(cell => `<th>${inline(cell)}</th>`).join("")}</tr></thead><tbody>${rows.map(row => `<tr>${headers.map((_, cellIndex) => `<td>${inline(row[cellIndex] || "")}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+      }
+      else if (/^\s*\|/.test(line)) { flushP(); closeLists(); paragraph.push(cells(line).join(" · ")); }
       else if (!line.trim()) { flushP(); closeLists(); }
       else { closeLists(); paragraph.push(line.trim()); }
     }

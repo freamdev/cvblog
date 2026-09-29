@@ -278,14 +278,14 @@ h3 {
 }
 .card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
   overflow: hidden;
-  transition:
-    transform 0.22s ease,
-    border-color 0.22s ease;
+  transition: border-color 0.22s ease;
 }
 .card:hover {
   border-color: #585e63;
@@ -307,6 +307,9 @@ h3 {
     monospace;
 }
 .card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   padding: 1.35rem;
 }
 .card-body p {
@@ -322,7 +325,8 @@ h3 {
     monospace;
 }
 .card .card-actions {
-  margin-top: 1.2rem;
+  margin-top: auto;
+  padding-top: 1.2rem;
 }
 .text-link {
   font-weight: 700;
@@ -390,6 +394,38 @@ h3 {
   border-radius: 5px;
   background: var(--surface-2);
 }
+.prose .article-action {
+  margin: 0.25rem 0.5rem 0.25rem 0;
+}
+.table-wrap {
+  margin: 1.75rem 0;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.prose th,
+.prose td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.prose th {
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+.prose td {
+  color: #c4c8ca;
+}
+.prose tbody tr:last-child td {
+  border-bottom: 0;
+}
 .facts {
   display: grid;
   gap: 0.8rem;
@@ -445,10 +481,15 @@ h3 {
 }
 .footer-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 .article-head {
   padding: 5rem 0 2rem;
+}
+.article-head > .shell,
+article > .shell {
+  max-width: 780px;
 }
 .article-head h1 {
   font-size: clamp(2.7rem, 6vw, 5.4rem);
